@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Nilan Saha's Blog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:Semi-Bold" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid " style="margin-top:30px;">
+  <h1  class="text-center headline" style="margin-bottom: 40px;">Nilan Saha's Blog</h1>
+  {% for post in posts -%}
+  <div class="row" style="margin-top:10px;">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <h4 class="text-center" style="margin-bottom:10px;"><a href="blog/{{ post._id }}">{{ post.title }}</a></h4>
+      <p>{{ post.body | truncate(200) }}</p>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  {%- endfor %}
+</div>
+</body>
+</html>
